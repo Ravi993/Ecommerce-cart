@@ -79,3 +79,11 @@ button.badge{
 .text-right {
   text-align: right;
 }
+
+
+.style{
+  float:right;
+  width: 35%;
+  height: fit-content;
+}
+

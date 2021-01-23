@@ -35,9 +35,11 @@ const onRemove = (product) => {
 
   return (
     <div className="App">
-      <Header countCartItems={cartItems.length}></Header>
+      <Header countCartItems={cartItems.length}></Header> 
       <div className="row">
-        <Main onAdd={onAdd} products={products}></Main>
+        <Main countCartItems={cartItems.length} onAdd={onAdd} products={products}></Main>
+      </div>
+      <div className='style'>
         <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}></Basket>
       </div>
     </div>
