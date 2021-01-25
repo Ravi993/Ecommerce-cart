@@ -4,6 +4,7 @@ import Basket from './Components/Basket';
 import data from './data';
 import { useState } from 'react';
 
+
 function App() {
   const { products }=data;
   const [cartItems,setCartItems] =useState([]);
@@ -34,15 +35,18 @@ const onRemove = (product) => {
 };
 
   return (
-    <div className="App">
-      <Header countCartItems={cartItems.length}></Header> 
-      <div className="row">
-        <Main countCartItems={cartItems.length} onAdd={onAdd} products={products}></Main>
-      </div>
-      <div className='style'>
-        <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}></Basket>
+    <div className="container" >
+      <div className="App">
+          <Header countCartItems={cartItems.length}></Header> 
+          <div className="row">
+           <Main countCartItems={cartItems.length} onAdd={onAdd} products={products}></Main>
+          </div>
+          <div className='style'>
+           <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}></Basket>
+          </div>
       </div>
     </div>
+    
   );
 }
 

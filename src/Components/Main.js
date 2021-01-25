@@ -5,14 +5,17 @@ export default function Main(props){
     const {products, onAdd, countCartItems} = props;
     return (
        <main className= "block col-2">
-           <h2> Your Cart ( 
+           <h2> Your Cart {' '}
                {countCartItems? (
-                   <button className="badge">{countCartItems}</button>
+                   <num>{'('}{countCartItems}{' ITEMS)'}</num>
                 ) : (
                  ''
-                )}   
+                )
+
+                }
             </h2>
-           <div className="row">
+            <hr/>
+           <div className="col">
                {products.map((product) => (
                    <Product key={product.id} product={product} onAdd={onAdd}></Product>
                ))}

@@ -1,5 +1,5 @@
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'YellowTail';
 }
 h1,
 h2,
@@ -19,9 +19,17 @@ a{
   text-decoration: none;
 }
 
+.bg{
+  background-color:966F33;
+}
+
 .row{
   display: flex;
   justify-content: space-between;
+}
+
+.flex-container{
+  flex-direction:;
 }
 
 .col-1{
@@ -33,7 +41,7 @@ a{
 }
 
 .block {
-  background-color: #e0e0e0;
+  background-color: #c9e9f6;
   padding: 1rem ;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -53,8 +61,8 @@ button{
  padding: 0.2rem;
  margin: 0.1rem;
  border-radius: 0.5rem;
- border: 0.1rem #404040 solid;
- background-color: #f0c040;
+ border: 0.1rem darkturquoise solid;
+ background-color:darkturquoise;
  width: 100%;
  cursor:pointer;
 }
@@ -76,6 +84,12 @@ button.badge{
   width: 1.5rem;
 }
 
+.num{
+  background-color: transparent;
+  width: fit-content;
+  cursor:pointer;
+
+}
 .text-right {
   text-align: right;
 }
@@ -87,3 +101,19 @@ button.badge{
   height: fit-content;
 }
 
+.center{
+ text-align: center;
+}
+
+button.checkout{
+  font-size: 0.8rem;
+  color:white;
+  padding: 0.2rem;
+  margin: 0.1rem;
+  border-radius: 0.12rem;
+  border: 0.1rem black solid ;
+  background-color: #404040;
+  width: 25%;
+  height: 60%;
+  cursor:pointer;
+}
