@@ -1,12 +1,11 @@
 import React  from 'react';
+import { Navbar, NavbarBrand } from 'reactstrap';
 
 export default function Header(props){ 
     return (
-        <header className= "row block center">
+        <Navbar className= "row block center">
             <div>
-                <a href= "#/">
-                   <h1>Small Shopping Cart</h1>
-                </a>  
+                <NavbarBrand href="/"><h1>Small Shopping Cart</h1></NavbarBrand>
             </div>
             <div>
                 <a href="#/cart">  
@@ -14,6 +13,6 @@ export default function Header(props){
                 </a> {' '}
                 <a href= "#/signin">SignIn</a>
             </div>
-        </header>
+        </Navbar>
     );
 }

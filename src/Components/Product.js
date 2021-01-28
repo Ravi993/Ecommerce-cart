@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Product(props) {
-    const {product, onAdd} = props;
+    const {product, onAdd, onRemove} = props;
     return (
         <div className="container">
             <div className="row ">
@@ -9,9 +9,20 @@ export default function Product(props) {
                <h3>{product.name}</h3>
                <div>${product.price}</div>
                <div>
-                  <button onClick={() => onAdd(product)}>Add To Cart</button>
-               </div>
+                    <button onClick={() => onAdd(product)} className="add">
+                        +
+                    </button>
+                         
+                    <button onClick={() => onRemove(product)} className="remove">
+                        -
+                    </button>
+                    
+                </div>    
+                <div>
+                  ${0}   
+                </div> 
             </div>
+            <br/>
         </div>
     );
 }
