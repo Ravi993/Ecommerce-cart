@@ -3,6 +3,7 @@ import Product from './Product';
 
 
 export default function Main(props){
+    
     const {products, onAdd, countCartItems, onRemove} = props;
     return (
        <main className= "block col-2">

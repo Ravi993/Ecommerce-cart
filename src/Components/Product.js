@@ -9,14 +9,13 @@ export default function Product(props) {
                <h3>{product.name}</h3>
                <div>${product.price}</div>
                <div>
-                    <button onClick={() => onAdd(product)} className="add">
-                        +
-                    </button>
-                         
                     <button onClick={() => onRemove(product)} className="remove">
-                        -
-                    </button>
-                    
+                        v
+                    </button>  
+                    <button onClick={() => onAdd(product)} className="add">
+                        ∧
+                    </button>     
+                                    
                 </div>    
                 <div>
                   ${0}   

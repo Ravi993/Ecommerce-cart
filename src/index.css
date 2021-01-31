@@ -61,19 +61,23 @@ button{
  padding: 0.2rem;
  margin: 0.1rem;
  border-radius: 0.5rem;
- border: 0.1rem darkturquoise solid;
+ border: 0.01rem darkturquoise solid;
  background-color:darkturquoise;
  width: 100%;
  cursor:pointer;
 }
 
 button.add{
-   background-color: #40c0f0;
+   background-color: white;
+   border-radius : 0.12rem;
+  border: 0.001rem black solid ;
    width: 1.5rem;
 }
 
 button.remove{
-  background-color: #f04040;
+  background-color: white;
+  border-radius : 0.12rem;
+  border: 0.001rem black solid ;
   width: 1.5rem;
 }
 
@@ -117,3 +121,5 @@ button.checkout{
   height: 60%;
   cursor:pointer;
 }
+
+

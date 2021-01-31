@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import Header from './Components/Header';
 import Main from './Components/Main';
 import Basket from './Components/Basket';
@@ -5,9 +6,21 @@ import data from './data';
 import { useState } from 'react';
 
 
-function App() {
+
+function App(props) {
+
   const { products }=data;
   const [cartItems,setCartItems] =useState([]);
+  
+  
+  const [isOpen, setisOpen] = useState(false);
+  
+  const openModal = () => setisOpen(true);
+  const closeModal = () => setisOpen(false);
+
+
+
+
   const onAdd = (product) =>{
     const exist= cartItems.find(x => x.id=== product.id);
     if (exist){
@@ -35,9 +48,11 @@ function App() {
   };
 
   return (
+
     <div className="container">
+      
       <div className="App" >
-          <Header countCartItems={cartItems.length}></Header> 
+          <Header countCartItems={cartItems.length} openModal={openModal} closeModal={closeModal} isOpen={isOpen} ></Header> 
           <div className="row">
            <Main countCartItems={cartItems.length} onAdd={onAdd} onRemove={onRemove} products={products}></Main>
           </div>
