@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Form, ModalDialog } from "react-bootstrap";
+import Navigation from 'react-sticky-nav';
+import './modal.css';
 
 
 class Header extends Component {
+
+    
  
     render() {
       return (
-        <Navbar className= "row block center">
+        
+        <Navigation className= "row block-header center">
             <div>
                 <NavbarBrand href="/"><h1>Small Shopping Cart</h1></NavbarBrand>
             </div>
@@ -15,28 +20,51 @@ class Header extends Component {
                 <a href="#/cart">  
                    Cart{ ' |'}
                 </a> {' '}
-                <a href= "#/signin">SignIn</a>
-            </div>
-            <>
-                <div
-                  className="d-flex align-items-center justify-content-center"
+                <a href= "#/signin" onClick={this.props.openModal} >SignIn</a>
                 
-                >
-                   <Button variant="primary" onClick={this.props.openModal}>
-                        Launch modal
-                   </Button>
-                </div>
-                <Modal show={this.props.isOpen}> 
-                   <Modal.Header closeButton>
-                      <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+            </div>
+            <Modal show={this.props.isOpen} onHide={this.props.closeModal}> 
+                <ModalDialog > 
+                  <Modal.Header>
+                       <Modal.Title>Sign in to your account</Modal.Title>  
+                  </Modal.Header ><br/>
+                  <Modal.Body>
+                      <Form>
+                           <Form.Group controlId="formBasicEmail">
+                              <Form.Label>Username *</Form.Label><br/>
+                              <Form.Control type="email" placeholder="test@test.com" /><br/>
+                              <Form.Text className="text-muted">
+                                   We'll never share your email with anyone else.
+                              </Form.Text>
+                           </Form.Group><br/>
+
+                           <Form.Group controlId="formBasicPassword">
+                               <Form.Label>Password *</Form.Label><br/>
+                               <Form.Control type="password" placeholder="Password" /><br/>
+                               <Form.Text className="text-muted">
+                                   Forget your password? Reset password
+                               </Form.Text>
+                           </Form.Group><br/>
+                           <Form.Group controlId="formBasicCheckbox">
+                               <Form.Check type="checkbox" label="Check me out" />
+                           </Form.Group><br/>
+                           <Form.Label>
+                                No account? Create account
+                           </Form.Label>
+                           <Button className="modal-button" variant="warning" type="submit">
+                              SIGN IN
+                           </Button>
+                        </Form>
+                    </Modal.Body>
                     <Modal.Footer>
-                       <Button variant="secondary">Close</Button>
+                      {' '}
+                      <br/>
                     </Modal.Footer>
-                </Modal>
-            </>
-        </Navbar>
+                </ModalDialog>
+                
+            </Modal>
+        
+        </Navigation>
         
       );
     }

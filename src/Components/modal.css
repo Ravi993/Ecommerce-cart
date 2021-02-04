@@ -1,26 +1,59 @@
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-  }
-  
-  .modal-main {
-    position:fixed;
-    background: white;
-    width: 80%;
-    height: auto;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-  }
-  
-  .display-block {
-    display: block;
-  }
-  
-  .display-none {
-    display: none;
-  }
+  background-color: white; /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
+  z-index: 1; /* Overlay effect: positioned over other containers */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  position: fixed; /* Fix position on the top-left corner*/
+  top: 0;
+  left: 0;
+  overflow: auto; /* Enable scroll if needed */
+  padding-top: 80px; /* Location of the content container */
+}
+
+.close {
+  color: white;
+  float: right; /* Positioned to the right of the parent container whichever size it is */
+  font-size: fit-content;
+  font-weight: bold;
+  width:30%;
+ }
+
+
+/* Modal content */
+.modal-content {
+  background-color: white;
+  width: 80%; /* Width in proportion to its parent container*/
+  max-width: 640px; /* Max width where it stops expanding */
+  height: 100%; /* Height in proportion to its parent container */
+  margin: auto; /* Auto margin according to the element width */
+  color:black;
+  padding: 10px;
+  border: 1px ;
+  border-radius: 0.2rem; /* Optional. Rounds container corners */
+}
+
+
+
+.modal-button{
+  color: white;
+  background-color:#f0ad4e;
+  border-radius: 0.1rem;
+  border:#f0ad4e; 
+  float:right;
+  width: 28%;
+  height:90%;
+
+
+}
+
+
+
+
+
+.close:hover, 
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

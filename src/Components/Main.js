@@ -16,6 +16,22 @@ export default function Main(props){
 
                 }
             </h2>
+            <div className="container">
+               <div  className={("row")}>
+                  <div style={{width:"18%",textAlign:"center"}}>
+                     Item
+                   </div>
+              
+               
+                   <div>Price</div>
+                   <div style={{textAlign:"center"}}>
+                      Quantity                  
+                    </div>    
+                    <div>
+                       Total  
+                   </div> 
+                </div>
+            </div>
             <hr/>
            <div className="col">
                {products.map((product) => (

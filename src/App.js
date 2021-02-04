@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import Header from './Components/Header';
 import Main from './Components/Main';
 import Basket from './Components/Basket';
+import Footer from './Components/Footer';
 import data from './data';
 import { useState } from 'react';
+
 
 
 
@@ -18,7 +20,7 @@ function App(props) {
   const openModal = () => setisOpen(true);
   const closeModal = () => setisOpen(false);
 
-
+ 
 
 
   const onAdd = (product) =>{
@@ -42,8 +44,8 @@ function App(props) {
       setCartItems(
         cartItems.map((x) =>
            x.id===product.id ? { ...exist, qty: exist.qty -1} : x
-         )
-       );
+          )
+        );
     }
   };
 
@@ -54,10 +56,15 @@ function App(props) {
       <div className="App" >
           <Header countCartItems={cartItems.length} openModal={openModal} closeModal={closeModal} isOpen={isOpen} ></Header> 
           <div className="row">
-           <Main countCartItems={cartItems.length} onAdd={onAdd} onRemove={onRemove} products={products}></Main>
+           <Main countCartItems={cartItems.length} onAdd={onAdd} onRemove={onRemove} products={products} cartItems={cartItems}></Main>
           </div>
-          <div className='style'>
-           <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}></Basket>
+          <div className= "row-basket">
+            <div className="style">
+              <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}></Basket>
+            </div>
+          </div>      
+          <div className="row-footer">
+            <Footer></Footer>
           </div>
       </div>
     </div>
