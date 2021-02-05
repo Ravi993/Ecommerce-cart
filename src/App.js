@@ -5,6 +5,8 @@ import Basket from './Components/Basket';
 import Footer from './Components/Footer';
 import data from './data';
 import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -51,14 +53,14 @@ function App(props) {
 
   return (
 
-    <div className="container">
+    <div>
       
-      <div className="App" >
+      <div>
           <Header countCartItems={cartItems.length} openModal={openModal} closeModal={closeModal} isOpen={isOpen} ></Header> 
-          <div className="row">
+          <div >
            <Main countCartItems={cartItems.length} onAdd={onAdd} onRemove={onRemove} products={products} cartItems={cartItems}></Main>
           </div>
-          <div className= "row-basket">
+          <div className= "row-basket" style={{paddingBottom:"0.1rem"}}>
             <div className="style">
               <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}></Basket>
             </div>

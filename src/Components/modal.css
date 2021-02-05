@@ -23,7 +23,7 @@
 /* Modal content */
 .modal-content {
   background-color: white;
-  width: 80%; /* Width in proportion to its parent container*/
+  width: 100%; /* Width in proportion to its parent container*/
   max-width: 640px; /* Max width where it stops expanding */
   height: 100%; /* Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
@@ -32,7 +32,6 @@
   border: 1px ;
   border-radius: 0.2rem; /* Optional. Rounds container corners */
 }
-
 
 
 .modal-button{

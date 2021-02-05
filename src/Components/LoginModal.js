@@ -14,7 +14,7 @@ const LoginModal = (props) => {
               <Modal.Footer>
                  <Button variant="danger" onClick={props.handleModalOpen}>
                     Cancel
-                 </Button>
+                 </Button> 
               </Modal.Footer>
           </Modal>
         </>

@@ -2,7 +2,10 @@ body{
   font-family: 'YellowTail';
 }
 h1,
-h2,
+h2 { 
+  padding:1rem;     
+}
+
 h3 {
   margin: 0.5rem 0;
 }
@@ -19,13 +22,45 @@ a{
   text-decoration: none;
 }
 
+
+
+.form-block {
+  background-color: white;
+  padding: 1rem ;
+  margin: 1rem;
+  height: fit-content;
+  width: 510px;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+
 .bg{
   background-color:966F33;
 }
 
+.main-row{
+  justify-content: space-around;
+}
 .row{
-  display: flex;
   justify-content: space-between;
+}
+
+.row-header{
+  justify-content: space-between;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+}
+
+.basket-left{
+  padding-left: 0.9rem ;
+}
+
+.basket-right{
+  padding-right: 1rem;
 }
 
 .row-basket{
@@ -60,16 +95,19 @@ a{
   background-color: #c9e9f6;
   padding: 1rem ;
   margin: 1rem;
+  height: fit-content;
+  width: 510px;
   border-radius: 0.5rem;
 }
 
 
 
 .block-header{
-  background-color: yellowgreen;
+  background-color: var(--mainDark);
   padding: 1rem ;
-  margin: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.01rem;
+  height: 75px;
+  justify-content:space-evenly;
 
 }
 

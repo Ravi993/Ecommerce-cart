@@ -7,13 +7,13 @@ export default function Basket(props) {
     const shippingPrice= itemsPrice > 2000 ? 0 : 50;
     const totalPrice= itemsPrice + taxPrice + shippingPrice;
     return (
-       <aside className="block col-1">
+       <aside className="block">
           <h2>Order Summary</h2>
           <div>{cartItems.length ===  0 && <div>Cart is Empty</div>}</div>
           {cartItems.map((item) => (
                <div key={item.id} className="row">
-                   <div className="col-2">{item.name}</div>
-                    <div className="col-2 text-right">
+                   <div className="basket-left">{item.name}</div>
+                    <div className="basket-right">
                       {item.qty} x ${item.price.toFixed(2)}
                     </div>
                 </div>
@@ -23,21 +23,21 @@ export default function Basket(props) {
                 <hr></hr>
                 <div className="row"> 
                     <div className= "col-2">Subtotal</div>
-                    <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
+                    <div className="basket-right">${itemsPrice.toFixed(2)}</div>
                 </div>
+                  <div className="row"> 
+                    <div className="basket-left">Tax Price</div>
+                    <div className="basket-right">${taxPrice.toFixed(2)}</div>
+                  </div>
                 <div className="row"> 
-                    <div className= "col-2">Tax Price</div>
-                    <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
+                    <div className= "basket-left">Shipping Price</div>
+                    <div className="basket-right">${shippingPrice.toFixed(2)}</div>
                 </div>
-                <div className="row"> 
-                    <div className= "col-2">Shipping Price</div>
-                    <div className="col-1 text-right">${shippingPrice.toFixed(2)}</div>
-                </div>
-                <div className="row"> 
-                    <div className= "col-2">
+                <div className="row" > 
+                    <div className= "basket-left">
                       <strong>Total Price</strong>
                     </div>
-                    <div className="col-1 text-right">
+                    <div className="basket-right">
                       <strong>${totalPrice.toFixed(2)}</strong>
                     </div>
                 </div>

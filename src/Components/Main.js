@@ -6,7 +6,8 @@ export default function Main(props){
     
     const {products, onAdd, countCartItems, onRemove} = props;
     return (
-       <main className= "block col-2">
+        <div>
+        <main>
            <h2> Your Cart {' '}
                {countCartItems? (
                    <num>{'('}{countCartItems}{' ITEMS)'}</num>
@@ -18,12 +19,10 @@ export default function Main(props){
             </h2>
             <div className="container">
                <div  className={("row")}>
-                  <div style={{width:"18%",textAlign:"center"}}>
+                  <div style={{width:"30%",textAlign:"center"}}>
                      Item
-                   </div>
-              
-               
-                   <div>Price</div>
+                   </div>          
+                   <div style={{width:"13%"}}>Price</div>
                    <div style={{textAlign:"center"}}>
                       Quantity                  
                     </div>    
@@ -36,8 +35,10 @@ export default function Main(props){
            <div className="col">
                {products.map((product) => (
                    <Product key={product.id} product={product} onAdd={onAdd} onRemove={onRemove}></Product>
-               ))}
+               ))}    
            </div>
+            
        </main>
+        </div>
     );       
 }
