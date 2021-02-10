@@ -8,7 +8,8 @@ export default function Basket(props) {
     const totalPrice= itemsPrice + taxPrice + shippingPrice;
     return (
        <aside className="block">
-          <h2>Order Summary</h2>
+          <h2 >Order Summary</h2>
+          &nbsp;
           <div>{cartItems.length ===  0 && <div>Cart is Empty</div>}</div>
           {cartItems.map((item) => (
                <div key={item.id} className="row">

@@ -4,11 +4,11 @@ import Product from './Product';
 
 export default function Main(props){
     
-    const {products, onAdd, countCartItems, onRemove} = props;
+    const {products, onAdd, countCartItems, cartItems, onRemove, itemsPrice} = props;
     return (
         <div>
         <main>
-           <h2> Your Cart {' '}
+           <h2 style={{ padding:"2rem" }}> <i class="fas fa-shopping-basket"></i>&nbsp;Your Cart {' '}
                {countCartItems? (
                    <num>{'('}{countCartItems}{' ITEMS)'}</num>
                 ) : (
@@ -34,11 +34,12 @@ export default function Main(props){
             <hr/>
            <div className="col">
                {products.map((product) => (
-                   <Product key={product.id} product={product} onAdd={onAdd} onRemove={onRemove}></Product>
+                   <Product key={product.id} product={product} countCartItems={countCartItems} cartItems={cartItems} itemsPrice={itemsPrice} onAdd={onAdd} onRemove={onRemove}></Product>
                ))}    
            </div>
             
        </main>
+       {countCartItems}
         </div>
     );       
 }

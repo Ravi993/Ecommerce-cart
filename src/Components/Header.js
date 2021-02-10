@@ -67,7 +67,7 @@ class Header extends Component {
                       {' '}
                       <br/>
                       
-                      <div className=" form-block">Or</div>
+                      <div className=" form-block" style={{fontSize:"0.9rem"}}>OR</div>
                       <br/>
                       <a className="btn btn-block btn-social btn-facebook">
                           <span class="fa fa-facebook"></span>&nbsp;

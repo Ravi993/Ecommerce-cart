@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import Main from './Components/Main';
 import Basket from './Components/Basket';
 import Footer from './Components/Footer';
+import ScrollButton from './Components/ScrollButton';
 import data from './data';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +16,7 @@ function App(props) {
 
   const { products }=data;
   const [cartItems,setCartItems] =useState([]);
-  
+  const [count, setCount] = useState(0);
   
   const [isOpen, setisOpen] = useState(false);
   
@@ -23,6 +24,13 @@ function App(props) {
   const closeModal = () => setisOpen(false);
 
  
+  const handleIncrement = () =>{
+    setCount(prevCount => prevCount + 1);
+  };
+
+  const handleDecrement = () => {
+    setCount(prevCount => prevCount - 1);
+  };
 
 
   const onAdd = (product) =>{
@@ -58,13 +66,17 @@ function App(props) {
       <div>
           <Header countCartItems={cartItems.length} openModal={openModal} closeModal={closeModal} isOpen={isOpen} ></Header> 
           <div >
-           <Main countCartItems={cartItems.length} onAdd={onAdd} onRemove={onRemove} products={products} cartItems={cartItems}></Main>
+           <Main countCartItems={cartItems.length} onAdd={onAdd} onRemove={onRemove} products={products} cartItems={cartItems} count={count} handleIncrement={handleIncrement} decrement={handleDecrement} itemsPrice={props.itemsPrice}></Main>
           </div>
           <div className= "row-basket" style={{paddingBottom:"0.1rem"}}>
             <div className="style">
               <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}></Basket>
             </div>
-          </div>      
+          </div>
+          &nbsp;
+          <div>
+            <ScrollButton></ScrollButton>
+          </div>     
           <div className="row-footer">
             <Footer></Footer>
           </div>
